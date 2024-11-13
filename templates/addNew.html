@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Display messages -->
+{% if messages %}
+    <div class="messages" id="message-container">
+        {% for message in messages %}
+            <div class="{% if message.tags %}{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<script>
+    // JavaScript to hide the message after 3 seconds
+    setTimeout(() => {
+        const messageContainer = document.getElementById('message-container');
+        if (messageContainer) {
+            messageContainer.style.display = 'none'; // Hide the message container
+        }
+    }, 3000); // 3000 milliseconds = 3 seconds
+</script>
+
+<!-- Add new student section starts here -->
+<div class="addnew-wraper-container">
+
+    <div class="add-new-left-container">
+        <div class="addnew-left-details-container">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="addnew-student-details">
+                    <label for="profile-image">Profile Image</label>
+                    <input type="file" id="profile-image" class="entity" name="profile_image" accept="image/*"><br>
+
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="entity" name="name" placeholder="Enter full name" required><br>
+
+                    <label for="contact-number">Contact Number</label>
+                    <input type="tel" id="contact-number" class="entity" name="contact_number" placeholder="Enter contact number" required><br>
+
+                    <label for="email-id">Email Id</label>
+                    <input type="tel" id="email-id" class="entity" name="email_id" placeholder="Enter Email Id" required><br>
+
+                    <label for="seat-number">Seat Number</label>
+                    <select id="seat-number" class="entity" name="seat_number" required>
+                        <option value="">Select a seat</option>
+                        <option value="1">Seat 1</option>
+                        <option value="2">Seat 2</option>
+                        <option value="3">Seat 3</option>
+                        <option value="4">Seat 4</option>
+                        <option value="5">Seat 5</option>
+                    </select><br>
+
+                    <label for="joining-date">Joining Date</label>
+                    <input type="date" id="joining-date" class="entity" name="joining_date" required><br>
+
+                    <label for="monthly-fee">Monthly Fee</label>
+                    <input type="number" id="monthly-fee" class="entity" name="monthly_fee" placeholder="Enter monthly fee" required>
+                </div>
+                <button type="submit"><span>Add Student</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- To check the review  -->
+
+    <div class="add-new-right-container">
+        <div class="students-wraper">
+            <div class="addnew-main-container">
+                <h2>Profile Review</h2>
+                    <div class="student-profile">
+                        <div class="details-container">
+                            <div class="details profile-pic-container">
+                                    <img src="https://media.istockphoto.com/id/1334218189/photo/girl-doing-homework-or-online-education.jpg?s=1024x1024&w=is&k=20&c=OxPMmTj06BqYZcZ3k_3PtNIfTtyb0-v3_s49y9TZKIc=" alt="Default Profile Image">
+                            </div>
+                            <div class="details"><h3>{{ student.name }}</h3></div>
+                            <div class="details"><p>{{ student.contact_number }}</p></div>
+                            <div class="details"><p>{{ student.email_id }}</p></div>
+                            <div class="details"><h5>Joining Date: {{ student.joining_date }}</h5></div>
+                            <div class="details"><h5>Monthly Fee: {{ student.monthly_fee }}/-</h5></div>
+                            <div class="details"><h5>Seat No: {{ student.seat_number }}/-</h5></div>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

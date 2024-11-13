@@ -1,0 +1,228 @@
+/* Base styling for larger screens (desktops, etc.) */
+.messages {
+    margin: 20px 0; 
+    text-align: center; 
+}
+
+.messages .success {
+    color: green; 
+    font-weight: 900;
+    font-size: 1em; 
+}
+
+
+.addnew-wraper-container {
+    display: flex;  
+    align-items: stretch; /* Ensure left and right containers have equal height */ 
+}
+
+.add-new-left-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: 50%;
+    background-color: #fff;
+    flex: 1; /* Makes both containers equal in width and height */
+}
+
+.add-new-right-container {
+    display: flex;
+    background-color: #fff;
+    flex: 1; /* Makes both containers equal in width and height */
+    align-items: center;
+    justify-content: center;
+}
+
+.addnew-left-details-container {
+    height: fit-content;
+    width: fit-content;
+    background-color: #ead1d1cb;
+    box-shadow: 10px 0px 10px 5px rgba(99, 88, 88, 0.311);
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.addnew-student-details {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.entity {
+    margin-top: 10%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+input, select {
+    width: 60%; /* Adjusts input width */
+    padding: 5px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+button {
+    margin-top:10px;
+    padding: 10px 10px;
+    background-color: #f52a23;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+button span {
+    font-weight: 900;
+    color: #fff;
+}
+
+
+
+.students-wraper{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .addnew-main-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    height: fit-content;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+    gap: 3%;
+   
+  }
+
+  .student-profile {
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: fit-content;
+    height: fit-content;
+    background-color: #3b9687;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-pic-container {
+    width: 150px; /* Set the desired profile image size */
+    height: 150px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  .student-profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+  }
+  
+  .details p, h5, button {
+    margin: 10px 0;
+  }
+  
+  .student-profile {
+    transition: all 0.3s ease; /* Smooth transition for the effect */
+  }
+  
+  .student-profile:hover {
+    transform: translateY(-5px); /* Move upward */
+    box-shadow: 0 0 17px rgb(250, 248, 248); /* White shadow on all sides */
+  }
+
+  .add-new-right-container h2{
+    color: #f52a23;
+    font-weight: 900;
+    
+  }
+  
+
+/* Media query for tablets (portrait and landscape) */
+@media (max-width: 1024px) {
+    .addnew-wraper-container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .add-new-left-container, .add-new-right-container {
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+    }
+
+    .addnew-left-details-container {
+        width: 80%; /* Adjust width for tablet */
+    }
+
+    input, select {
+        width: 80%; /* Inputs take more space on tablets */
+    }
+}
+
+/* Media query for phones */
+@media (max-width: 600px){
+
+    .addnew-wraper-container{
+        flex-direction: column;
+    }
+    .addnew-left-details-container {
+        width: 95%; /* Full width for smaller devices */
+        margin-top: 20px;
+    }
+
+    input, select {
+        width: 100%; /* Full width inputs on mobile */
+    }
+
+    form {
+        padding: 20px 10px;
+    }
+
+    button {
+        width: 100%; /* Full-width button */
+    }
+
+    .add-new-right-container{
+        margin: 2x;
+    }
+}

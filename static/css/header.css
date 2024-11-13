@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilory';
+}
+
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+.main{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+    
+.nav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3.5vw;
+    
+}
+.nav-part2{
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+}
+
+.nav img{
+    height: 2.5vw;
+    width:10vw;
+}
+
+.nav h4{
+    font-size: 1.5vw;
+    font-weight: 800;
+}
+.nav-part2 i{
+    font-size: 1.6vw;
+    font-weight: 800;
+    display: none;
+}
+
+.nav button {
+    font-size: 1.2vw;
+    padding: 0.6vw 1.3vw;
+    background-color: #385A64;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+
+}
+.nav span{
+    margin-left: 5px;
+    color: #385A64;
+}
+
+
+ /* css for small divices ..like phone */
+ 
+@media (max-width:600px) {
+    .nav{
+        padding: 0vw 6vw;
+        height:70px;
+        border-bottom: 3px solid #385A64;
+    
+
+    }
+    .nav img{
+        height: 6vw;
+        width:20vw;
+    }
+    .nav-part2 h4{
+        display:none;
+    }
+    .nav button{
+        display: none;
+    }
+   
+    .nav i{
+        display: block;
+        font-size: 5vw;
+        
+    }
+    
+}

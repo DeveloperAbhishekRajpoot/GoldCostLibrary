@@ -1,0 +1,124 @@
+
+.students-wraper{
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  display: flex;
+  max-width: 80%;
+  height: fit-content;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 10%;
+  align-items: flex-start;
+  gap: 2%;
+ 
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.student-profile {
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 25%;
+  height: fit-content;
+  background-color: #3b9687;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details h3{
+  margin-top: 10px;
+  color: #fff;
+  
+}
+
+.profile-pic-container {
+  width: 150px; /* Set the desired profile image size */
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+.student-profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover;
+}
+
+.details p, h5, button {
+  margin: 5px 0;
+}
+
+.student-profile {
+  transition: all 0.3s ease; /* Smooth transition for the effect */
+}
+
+.student-profile:hover {
+  transform: translateY(-5px); /* Move upward */
+  box-shadow: 0 0 17px rgb(250, 248, 248); /* White shadow on all sides */
+}
+
+
+button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive design for tablets and small screens */
+@media (max-width: 768px) {
+  .student-profile {
+      width: 45%;
+  }
+  .student-profile{
+    height: 45%;
+  }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 480px) {
+  .student-profile {
+      width: 100%;
+  }
+
+  .search-bar {
+      width: 60%;
+      margin: 20px auto;
+      height: 7vw;
+      border-radius: 20px;
+  }
+
+  .student-profile{
+    height: 45%;
+    margin: 5px 5px;
+  }
+
+}

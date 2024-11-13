@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="students-wraper">
+    <input type="text" class="search-bar" placeholder="Search the student by name...">
+
+    <div class="main-container">
+        {% for student in students %}
+        <div class="student-profile">
+            <div class="details-container">
+                <div class="details  profile-pic-container">
+                    <img src="{{ student.profile_image }}" alt="student/img">
+                </div>
+                <div class="details"><h3>{{ student.name }}</h3></div>
+                <div class="details"><p>{{ student.contact_number }} </p></div>
+                <div class="details"><p>{{ student.email_id }} </p></div>
+                <div class="details"><h5>Joining Date : {{ student.joining_date }}</h5></div>
+                <div class="details"><h5>Seat No : {{ student.seat_number }}</h5></div>
+                <div class="details"><button>Pending Dues</button></div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No students found.</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
